@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/login'
   #Log in page root/get
   root "articles#login"
   #get "/articles", to: "articles#login"
