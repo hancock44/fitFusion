@@ -1,2 +1,31 @@
-<h1>Nutritionlogs#nutrition</h1>
-<p>Find me in app/views/nutritionlogs/nutrition.html.erb</p>
+<form>
+  <div class="form-group">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <label for="calories_consumed">Calories Consumed:</label>
+    <input type="number" id="calories_consumed" name="calories_consumed" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <label for="sleep_hours">Sleep Hours:</label>
+    <input type="number" id="sleep_hours" name="sleep_hours" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <label for="protein_intake">Protein Intake (grams):</label>
+    <input type="number" id="protein_intake" name="protein_intake" class="form-control">
+  </div>
+  
+  <!-- Display user's nutrition goals -->
+  <div class="form-group">
+    <p><strong>Nutrition Goals:</strong></p>
+    <p>Maximum Calories per Day: [user's max calories]</p>
+    <p>Minimum Protein Intake per Day: [user's min protein]</p>
+    <p>Minimum Sleep Hours per Day: [user's min sleep]</p>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Log Nutrition</button>
+</form>
