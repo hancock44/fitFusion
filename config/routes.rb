@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'nutritionlogs/nutrition'
+  get 'workoutlogs/workouts'
+  get 'posts/posts'
+  get 'medals/medals'
   #Log in page root/get
   root "articles#login"
   #get "/articles", to: "articles#login"
