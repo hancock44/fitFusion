@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'home/login'
+=======
+  get 'nutritionlogs/nutrition'
+  get 'workoutlogs/workouts'
+  get 'posts/posts'
+  get 'medals/medals'
+>>>>>>> tmp
   #Log in page root/get
   root "articles#login"
   #get "/articles", to: "articles#login"
