@@ -9,6 +9,15 @@
       <a class="nav-item nav-link" href="#">Features</a>
       <a class="nav-item nav-link" href="#">Pricing</a>
       <a class="nav-item nav-link disabled" href="#">Disabled</a>
+      <form class="">
+        <% if !user_signed_in? %>
+          <%= link_to 'Log In', new_user_session_path, class:"btn btn-outline-success"%>
+          <%= link_to 'Become member', new_user_registration_path, class:"btn btn-outline-success"%>
+        <% else %>
+          <%= current_user.email %>
+          <%= link_to 'Sign out', destroy_user_session_path, class:"btn btn-outline-success"%>
+        <% end %>
+      </form>
     </div>
   </div>
 </nav>
