@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'nutritionlogs/nutrition'
   get 'workoutlogs/workouts'
   get 'posts/posts'
