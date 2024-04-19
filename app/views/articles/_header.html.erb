@@ -5,10 +5,16 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#">Workouts</a>
-      <a class="nav-item nav-link" href="#">Nutrition</a>
-      <a class="nav-item nav-link" href="#">Social</a>
-      <a class="nav-item nav-link" href="#">Medals</a>
+      <li class="nav-item nav-link" href="#">
+        <%= link_to "Workouts", workoutlogs_workouts_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item nav-link" href="#">
+
+      </li>
+      <li class="nav-item nav-link" href="#">
+      </li>
+      <li class="nav-item nav-link" href="#">
+      </li>
     </div>
     <form class="">
         <% if !user_signed_in? %>
