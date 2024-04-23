@@ -7,6 +7,9 @@
       <th>Calories Consumed</th>
       <th>Current Sleep Hours</th>
       <th>Protein Intake</th>
+      <th>Max Calories</th>
+      <th>Min Sleep Hours</th>
+      <th>Min Protein Intake</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +29,15 @@
         <%= @nutrition_log.protein_intake %>
         <%= button_to 'Add Protein', { controller: 'nutrition_logs', action: 'add_protein', id: @nutrition_log.id }, method: :post %>
         <%= button_to 'Remove Protein', { controller: 'nutrition_logs', action: 'remove_protein', id: @nutrition_log.id }, method: :post %>
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
       </td>
     </tr>
   </tbody>
