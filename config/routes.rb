@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'nutritionlogs/nutrition'
-  get 'workoutlogs/workouts'
+  #get 'workoutlogs/workouts'
   get 'posts/posts'
   get 'medals/medals'
-  #root to: "workoutlogs#workouts"
+  root to: "workoutlogs#workouts"
   devise_scope :user do  
    get '/users/sign_out' => 'devise/sessions#destroy'     
   end
