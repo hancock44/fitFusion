@@ -1,62 +1,33 @@
 <%= stylesheet_link_tag 'nutritionLog' %>
-<section class="intro">
-  <div class="gradient-custom-2 h-100">
-    <div class="mask d-flex align-items-center h-100">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12">
-            <div class="table-responsive">
-              <table class="table table-dark table-bordered mb-0">
-                <thead>
-                  <tr>
-                    <th scope="col">TYPE</th>
-                    <th scope="col">ADD AMOUNT</th>
-                    <th scope="col">CURRENT AMOUNT</th>
-                    <th scope="col">MAX/MIN AMOUNT</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Calories</th>
-                    <td>
-                      <div class="form-outline" data-mdb-input-init>
-                        <input type="text" id="form12" class="form-control" />
-                        <label class="form-label" for="form12">Add/Remove Calories</label>
-                      </div>
-                    </td>
-                    <td>1800C</td>
-                    <td>2000C (MAX)</td>
-                  </tr>
+<h1>Nutrition Log</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Calories Consumed</th>
+      <th>Current Sleep Hours</th>
+      <th>Protein Intake</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @nutrition_log.date %></td>
+      <td>
+        <%= @nutrition_log.calories_consumed %>
+        <%= button_to 'Add Calories', { controller: 'nutrition_logs', action: 'add_calories', id: @nutrition_log.id }, method: :post %>
+        <%= button_to 'Remove Calories', { controller: 'nutrition_logs', action: 'remove_calories', id: @nutrition_log.id }, method: :post %>
+      </td>
+      <td>
+        <%= @nutrition_log.current_sleep_hours %>
+        <%= button_to 'Add Sleep', { controller: 'nutrition_logs', action: 'add_sleep', id: @nutrition_log.id }, method: :post %>
+        <%= button_to 'Remove Sleep', { controller: 'nutrition_logs', action: 'remove_sleep', id: @nutrition_log.id }, method: :post %>
+      </td>
+      <td>
+        <%= @nutrition_log.protein_intake %>
+        <%= button_to 'Add Protein', { controller: 'nutrition_logs', action: 'add_protein', id: @nutrition_log.id }, method: :post %>
+        <%= button_to 'Remove Protein', { controller: 'nutrition_logs', action: 'remove_protein', id: @nutrition_log.id }, method: :post %>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-                  <tr>
-                    <th scope="row">Protein</th>
-                    <td>
-                      <div class="form-outline" data-mdb-input-init>
-                        <input type="text" id="form12" class="form-control" />
-                        <label class="form-label" for="form12">Add/Remove Protein</label>
-                      </div>
-                    </td>
-                    <td>80g</td>
-                    <td>120g (MIN)</td>
-                  </tr>
-
-                  <tr>
-                    <th scope="row">Sleep</th>
-                    <td>
-                      <div class="form-outline" data-mdb-input-init>
-                        <input type="text" id="form12" class="form-control" />
-                        <label class="form-label" for="form12">Add/Remove Sleep</label>
-                      </div>
-                    </td>
-                    <td>7hr</td>
-                    <td>8hr (MIN)</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
