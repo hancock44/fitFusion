@@ -5,3 +5,9 @@
 <div>
   <%= link_to "Edit", edit_workoutlog_path(@workoutlog) %>
 </div>
+<div>
+  <%= link_to "Destroy", workoutlog_path(@workoutlog), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+</div>
