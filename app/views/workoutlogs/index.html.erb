@@ -4,8 +4,6 @@
       <th scope="col">Day</th>
       <th scope="col">Type</th>
       <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -19,12 +17,6 @@
         </td>
         <td>
           <%= link_to "Show", show_workoutlog_path(workoutlog) %>
-        </td>
-        <td>
-          <%= link_to "Destroy", workoutlog_path(workoutlog), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
         </td>
       </tr>
   </tbody>
