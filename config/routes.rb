@@ -6,14 +6,17 @@ Rails.application.routes.draw do
   end
 
   #Workout Routes
-  get 'workoutlogs/workouts'
-
+  root "articles#index"
+  
+  get "/workoutlogs", to: "workoutlogs#workouts"
+  get "/workoutlogs/:id", to: "wokroutlogs#show"
+  
   #Posts Routes
   get 'posts/posts'
 
   #Medals Routes
-  #get 'medals/medals'
-  root to: "medals#medals"
+  get 'medals/medals'
+  #root to: "medals#medals"
   
   #Nutrition Routes
   get 'nutritionlogs/nutrition'
