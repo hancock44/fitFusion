@@ -37,6 +37,13 @@ class WorkoutlogsController < ApplicationController
     end
   end
 
+  def destroy
+    @workoutlog = Workoutlog.find(params[:id])
+    @workoutlog.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
   private
     def workoutlog_params
       params.require(:workoutlog).permit(:day, :type, :description)
