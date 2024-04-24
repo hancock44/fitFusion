@@ -23,6 +23,20 @@ class WorkoutlogsController < ApplicationController
     end
   end
 
+  def edit
+    @workoutlog = Workoutlog.find(params[:id])
+  end
+
+  def update
+    @workoutlog = Workoutlog.find(params[:id])
+
+    if @workoutlog.update(workoutlog_params)
+      redirect_to @workoutlog
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
     def workoutlog_params
       params.require(:workoutlog).permit(:day, :type, :description)
