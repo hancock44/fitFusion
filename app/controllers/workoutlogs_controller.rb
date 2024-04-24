@@ -1,7 +1,7 @@
 class WorkoutlogsController < ApplicationController
   before_action :authenticate_user!
   
-  def workouts
+  def index
     @workoutlogs = Workoutlog.all
   end
 
