@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
+  #Devise
   devise_for :users
-  get 'nutritionlogs/nutrition'
-  get 'workoutlogs/workouts'
-  get 'posts/posts'
-  #get 'medals/medals'
-  root to: "medals#medals"
   devise_scope :user do  
    get '/users/sign_out' => 'devise/sessions#destroy'     
   end
 
+  #Workout Routes
+  get 'workoutlogs/workouts'
+
+  #Posts Routes
+  get 'posts/posts'
+
+  #Medals Routes
+  #get 'medals/medals'
+  root to: "medals#medals"
+  
+  #Nutrition Routes
+  get 'nutritionlogs/nutrition'
   resources :nutrition_logs do
     post 'add_calories', on: :member
     post 'remove_calories', on: :member
