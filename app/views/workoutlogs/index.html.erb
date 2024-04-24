@@ -12,12 +12,12 @@
     <% @workoutlogs.each do |workoutlog| %>
       <tr>
         <td>
-          <a href="/workoutlogs/<%= workoutlog.id %>">
+          <a href="<%= workoutlog_path(workoutlog) %>">
             <%= workoutlog.day %>
           </a>
         </td>
         <td>
-          <a href="/workoutlogs/<%= workoutlog.id %>">
+          <a href="<%= workoutlog_path(workoutlog) %>">
             <%= workoutlog.type %>
           </a>
         </td>
