@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   #Workout Routes
   root "workoutlogs#workouts"
   
-  get "/workoutlogs", to: "workoutlogs#workouts"
-  get "/workoutlogs/:id", to: "wokroutlogs#show"
+  resources :articles
   
   #Posts Routes
   get 'posts/posts'
