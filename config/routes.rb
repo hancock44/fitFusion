@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   #Workout Routes
-  root "workoutlogs#workouts"
+  root "workoutlogs#index"
   
   resources :articles
   
