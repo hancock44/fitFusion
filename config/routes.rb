@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   #Workout Routes
-  root "articles#index"
+  root "workoutlogs#workouts"
   
   get "/workoutlogs", to: "workoutlogs#workouts"
   get "/workoutlogs/:id", to: "wokroutlogs#show"
