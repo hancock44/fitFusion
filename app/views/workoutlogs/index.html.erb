@@ -12,18 +12,17 @@
     <% @workoutlogs.each do |workoutlog| %>
       <tr>
         <td>
-          <a href="<%= workoutlog_path(workoutlog) %>">
-            <%= workoutlog.day %>
-          </a>
+          <%= workoutlog.day %>
         </td>
         <td>
-          <a href="<%= workoutlog_path(workoutlog) %>">
             <%= workoutlog.type %>
-          </a>
         </td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>
+          <%= link_to "Show", show_workoutlog_path(workoutlog) %>
+        </td>
+        <td>
+          Delete
+        </td>
       </tr>
   </tbody>
 </table>
