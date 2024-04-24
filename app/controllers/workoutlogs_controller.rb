@@ -14,7 +14,7 @@ class WorkoutlogsController < ApplicationController
   end
 
   def create
-    @workoutlog = Workoutlog.new(day: "...", type: "...", description: "...")
+    @workoutlog = Workoutlog.new(workoutlog_params)
 
     if @workoutlog.save
       redirect_to @workoutlog
@@ -22,4 +22,9 @@ class WorkoutlogsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  private
+    def workoutlog_params
+      params.require(:workoutlog).permit(:day, :type, :description)
+    end
 end
