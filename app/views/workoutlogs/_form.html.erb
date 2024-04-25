@@ -2,7 +2,7 @@
   <div>
     <%= form.label :day %><br>
     <%= form.text_field :day %>
-    <% article.errors.full_messages_for(:day).each do |message| %>
+    <% workoutlog.errors.full_messages_for(:day).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -10,7 +10,7 @@
   <div>
     <%= form.label :type %><br>
     <%= form.text_field :type %>
-    <% article.errors.full_messages_for(:type).each do |message| %>
+    <% workoutlog.errors.full_messages_for(:type).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -18,7 +18,7 @@
   <div>
     <%= form.label :description %><br>
     <%= form.text_area :description %><br>
-    <% article.errors.full_messages_for(:description).each do |message| %>
+    <% workoutlog.errors.full_messages_for(:description).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
