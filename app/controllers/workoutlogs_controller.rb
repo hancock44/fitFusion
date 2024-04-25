@@ -46,6 +46,6 @@ class WorkoutlogsController < ApplicationController
 
   private
     def workoutlog_params
-      params.require(:workoutlog).permit(:day, :type, :description)
+      params.require(:workoutlog).permit(:day, :regimen, :description)
     end
 end
