@@ -40,7 +40,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_24_152653) do
   create_table "workoutlogs", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "day"
-    t.string "type"
+    t.string "regimen"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
