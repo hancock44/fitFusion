@@ -14,7 +14,7 @@ class WorkoutlogsController < ApplicationController
   end
 
   def create
-    @workoutlog = Workoutlog.new(workoutlog_params)
+    @workoutlog = Workoutlog.new(day: "...", regimen: "...", description: "...")
 
     if @workoutlog.save
       redirect_to @workoutlog
