@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   #Workout Routes
   root "workoutlogs#index"
   
-  resources :workoutlogs, only: :index
+  resources :workoutlogs
+  resources only: :index
   
   #Posts Routes
   get 'posts/posts'
