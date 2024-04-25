@@ -2,7 +2,7 @@ class WorkoutlogsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @workoutlogs = current_user.workoutlogs.all
+    @workoutlogs = current_user.workoutlogs.first(7)
   end
 
   def show
