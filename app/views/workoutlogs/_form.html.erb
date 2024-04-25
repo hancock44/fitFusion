@@ -8,9 +8,9 @@
   </div>
 
   <div>
-    <%= form.label :type %><br>
-    <%= form.text_field :type %>
-    <% workoutlog.errors.full_messages_for(:type).each do |message| %>
+    <%= form.label :regimen %><br>
+    <%= form.text_field :regimen %>
+    <% workoutlog.errors.full_messages_for(:regimen).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
