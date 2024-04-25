@@ -2,7 +2,7 @@ class WorkoutlogsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @workoutlogs = Workoutlog.all
+    @workoutlogs = current_user.workoutlogs.ordwer("RANDOM()").first(1)
   end
 
   def show
