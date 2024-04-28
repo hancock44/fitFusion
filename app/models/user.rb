@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :nutrition_logs
   has_many :workoutlogs
+  has_many :posts
 end
