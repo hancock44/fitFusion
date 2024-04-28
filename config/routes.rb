@@ -21,7 +21,14 @@ Rails.application.routes.draw do
   #Nutrition Routes
   get 'nutritionlogs/index'
   
-  resources :nutrition_logs 
+  resources :nutrition_logs do
+    post 'add_calories', on: :member
+    post 'remove_calories', on: :member
+    post 'add_sleep', on: :member
+    post 'remove_sleep', on: :member
+    post 'add_protein', on: :member
+    post 'remove_protein', on: :member
+  end 
   
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
