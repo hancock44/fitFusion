@@ -16,6 +16,12 @@ class NutritionlogsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @workoutlog = Workoutlog.find(params[:id])
+  end
+
+  
   
   def add_calories
     @nutrition_log = NutritionLog.find(params[:id])
