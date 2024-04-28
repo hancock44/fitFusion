@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :nutrition_logs
   has_many :workoutlogs
   has_many :posts
+  has_many :likes, dependent: :destroy
 end
