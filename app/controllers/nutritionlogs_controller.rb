@@ -1,5 +1,6 @@
 class NutritionlogsController < ApplicationController
   before_action :authenticate_user!
+  
   def index
     @workoutlogs = current_user.nutrition_logs.limit(7)
   end
