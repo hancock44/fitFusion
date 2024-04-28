@@ -12,10 +12,11 @@ Rails.application.routes.draw do
 
 
   #Posts/LikesRoutes
+  get 'posts/index'
+  
   resources :posts do
     resources :likes
   end
-  get 'posts/index'
   
   
   #Medals Routes
