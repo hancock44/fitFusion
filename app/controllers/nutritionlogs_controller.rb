@@ -4,11 +4,11 @@ class NutritionlogsController < ApplicationController
   end
 
   def new
-      @workoutlog = Workoutlog.new
+      @nutrition_log = NutritionLog.new
   end
   
   def create
-    @nutrition_log = Nutrition_log.new(nutrition_log_params)
+    @nutrition_log = NutritionLog.new(nutrition_log_params)
   
     if @nutrition_log.save
         redirect_to @nutrition_log
@@ -18,10 +18,25 @@ class NutritionlogsController < ApplicationController
   end
 
   def edit
-    @workoutlog = Workoutlog.find(params[:id])
+    @nutrition_log = NutritionLog.find(params[:id])
   end
 
-  
+  def update
+    @nutrition_log = NutritionLog.find(params[:id])
+
+    if @nutrition_log.update(nutrition_log_params)
+      redirect_to @nutrition_log
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @nutrition_log = NutritionLog.find(params[:id])
+    @nutrition_log.destroy
+
+    redirect_to root_path, status: :see_other
+  end
   
   def add_calories
     @nutrition_log = NutritionLog.find(params[:id])
@@ -64,4 +79,10 @@ class NutritionlogsController < ApplicationController
     @nutrition_log.save
     redirect_to @nutrition_log
   end
+
+  private
+    def nutrition_log_params
+      params.require(:nutrition_log).permit(:date, :protein_intake, :current_sleep_hours, :calories_consumed,
+        :max_calories, :min_protein, :min_sleep)
+    end
 end
