@@ -3,6 +3,7 @@
 <%= render @post %>
 
 <div>
+  <%= button_to 'Like', post_likes_path(@post), method: :post %>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
   <%= link_to "Back to posts", posts_path %>
 
