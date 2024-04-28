@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :posts
   #Devise
   devise_for :users
   devise_scope :user do  
@@ -13,8 +12,9 @@ Rails.application.routes.draw do
 
 
   #Posts Routes
-  get 'posts/posts'
 
+  resources :posts
+  
   #Medals Routes
   get 'medals/medals'
   #root to: "medals#medals"
