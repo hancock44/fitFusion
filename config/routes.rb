@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
 
   #Posts Routes
-
+  get 'posts/index'
+  
   resources :posts
   
   #Medals Routes
