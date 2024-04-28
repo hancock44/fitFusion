@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :likes
-  resources :posts
   #Devise
   devise_for :users
   devise_scope :user do  
@@ -13,7 +11,10 @@ Rails.application.routes.draw do
   resources :workoutlogs
 
 
-  #Posts Routes
+  #Posts/LikesRoutes
+  resources :posts do
+    resources :likes
+  end
   get 'posts/index'
   
   
