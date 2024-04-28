@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_28_232136) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_28_233644) do
+  create_table "likes", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "nutrition_logs", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.date "date"
@@ -28,7 +37,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_28_232136) do
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "content"
-    t.integer "likes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -56,6 +64,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_28_232136) do
     t.index ["user_id"], name: "index_workoutlogs_on_user_id"
   end
 
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
   add_foreign_key "nutrition_logs", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "workoutlogs", "users"
