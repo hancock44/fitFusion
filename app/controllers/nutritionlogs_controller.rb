@@ -1,8 +1,22 @@
 class NutritionlogsController < ApplicationController
   before_action :authenticate_user!
-  def nutrition
+  def index
   end
 
+  def new
+      @workoutlog = Workoutlog.new
+  end
+  
+  def create
+    @nutrition_log = Nutrition_log.new(nutrition_log_params)
+  
+    if @nutrition_log.save
+        redirect_to @nutrition_log
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+  
   def add_calories
     @nutrition_log = NutritionLog.find(params[:id])
     @nutrition_log.calories_consumed += 100
