@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   #Workout Routes
-  get "workout_logs/index"
+  get "workoutlogs/index"
   
   resources :workout_logs
 
