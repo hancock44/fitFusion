@@ -4,12 +4,14 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
+    <%= render post %>
     <div>
-      <%= render post %>
       <%= link_to "Show this post", post %>
       <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
     </div>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<div>
+  <%= link_to "New post", new_post_path %>
+</div>
