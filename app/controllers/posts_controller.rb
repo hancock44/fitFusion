@@ -34,12 +34,6 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
-    if already_liked?
-      flash[:notice] = "You can't like more than once"
-    else
-      @post.likes.create(user_id: current_user.id)
-    end
-    redirect_to post_path(@post)
   end
 
   # PATCH/PUT /posts/1 or /posts/1.json
