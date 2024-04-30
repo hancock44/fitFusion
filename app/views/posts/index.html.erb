@@ -5,10 +5,10 @@
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
-    <div>
+    <p>
       <%= link_to "Show this post", post %>
       <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
-    </div>
+    </p>
   <% end %>
 </div>
 
