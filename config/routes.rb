@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   end
 
   #Workout Routes
-  root "workoutlogs#index"
+  root "workout_logs#index"
   
-  resources :workoutlogs
+  resources :workout_logs
 
 
   #Posts/LikesRoutes
