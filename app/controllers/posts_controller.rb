@@ -74,12 +74,7 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
-  
-    def already_liked?
-      Like.where(user_id: current_user.id, post_id:
-      params[:post_id]).exists?
-    end
-  
+
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:user_id, :content)
