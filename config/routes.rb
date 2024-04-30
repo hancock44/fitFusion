@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   #Workout Routes
-  root "workout_logs#index"
+  get "workout_logs/index"
   
   resources :workout_logs
 
@@ -20,8 +20,7 @@ Rails.application.routes.draw do
   end
   
   #Medals Routes
-  get 'medals/medals'
-  #root to: "medals#medals"
+  root to: "medals#medals"
   
   #Nutrition Routes
   get 'nutritionlogs/index'
