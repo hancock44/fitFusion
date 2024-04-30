@@ -3,7 +3,11 @@ class LikesController < ApplicationController
   before_action :authenticate_user!
   
   def create
-    @post.likes.create(user_id: current_user.id)
+    if already_liked?
+      flash[:notice] = "You can't like more than once"
+    else
+      @post.likes.create(user_id: current_user.id)
+    end
     redirect_to post_path(@post)
   end
 
