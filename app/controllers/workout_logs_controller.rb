@@ -1,4 +1,5 @@
 class WorkoutLogsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_workout_log, only: %i[ show edit update destroy ]
 
   # GET /workout_logs or /workout_logs.json
