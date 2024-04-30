@@ -9,6 +9,7 @@ class WorkoutLogsController < ApplicationController
 
   # GET /workout_logs/1 or /workout_logs/1.json
   def show
+    @workout_log = WorkoutLog.find(params[:id])
   end
 
   # GET /workout_logs/new
