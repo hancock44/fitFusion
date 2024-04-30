@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :workout_logs
   #Devise
   devise_for :users
   devise_scope :user do  
