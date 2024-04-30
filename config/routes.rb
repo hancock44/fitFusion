@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   resources :posts do
     resources :likes
   end
-  resources :likes
   
   #Medals Routes
   get 'medals/medals'
