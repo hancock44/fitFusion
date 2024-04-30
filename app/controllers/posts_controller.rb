@@ -18,16 +18,15 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-
     respond_to do |format|
       if @post.save
-        if already_liked?
-          flash[:notice] = "You can't like more than once"
-        else
-          @post.likes.create(user_id: current_user.id)
-        end
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
@@ -35,6 +34,12 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+    if already_liked?
+      flash[:notice] = "You can't like more than once"
+    else
+      @post.likes.create(user_id: current_user.id)
+    end
+    redirect_to post_path(@post)
   end
 
   # PATCH/PUT /posts/1 or /posts/1.json
