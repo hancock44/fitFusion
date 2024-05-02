@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_28_233644) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_30_194246) do
   create_table "likes", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
@@ -54,19 +54,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_28_233644) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "workoutlogs", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "workout_logs", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "day"
     t.string "regimen"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_workoutlogs_on_user_id"
+    t.index ["user_id"], name: "index_workout_logs_on_user_id"
   end
 
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "nutrition_logs", "users"
   add_foreign_key "posts", "users"
-  add_foreign_key "workoutlogs", "users"
+  add_foreign_key "workout_logs", "users"
 end
