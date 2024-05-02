@@ -1,4 +1,5 @@
 class NutritionLogsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_nutrition_log, only: %i[ show edit update destroy ]
   before_validation :set_default_day, on: :create
 
