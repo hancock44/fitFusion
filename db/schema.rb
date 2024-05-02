@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_30_194246) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_02_185708) do
   create_table "likes", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
@@ -22,13 +22,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_194246) do
 
   create_table "nutrition_logs", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.date "date"
-    t.integer "calories_consumed"
-    t.float "current_sleep_hours"
-    t.integer "protein_intake"
-    t.integer "max_calories"
-    t.integer "min_protein"
-    t.float "min_sleep"
+    t.integer "calories_current"
+    t.float "sleep_current"
+    t.integer "protein_current"
+    t.integer "calories_max"
+    t.float "sleep_max"
+    t.integer "protein_max"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_nutrition_logs_on_user_id"
