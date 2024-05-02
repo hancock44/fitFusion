@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :nutrition_logs
   #Devise
   devise_for :users
   devise_scope :user do  
