@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   #Devise
+  root to: "articles#home"
   devise_for :users
   devise_scope :user do  
    get '/users/sign_out' => 'devise/sessions#destroy'     
@@ -17,9 +18,6 @@ Rails.application.routes.draw do
   resources :posts do
     resources :likes
   end
-  
-  #Medals Routes
-  root to: "medals#medals"
   
   #Nutrition Routes
   get 'nutrition_logs/index'
