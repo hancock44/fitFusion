@@ -57,6 +57,36 @@ class NutritionLogsController < ApplicationController
     end
   end
 
+  def add_calories
+    modify_nutrition_log(:calories_current, 100)
+  end
+
+  def remove_calories
+    modify_nutrition_log(:calories_current, -100)
+  end
+
+  def add_protein
+    modify_nutrition_log(:protein_current, 5)
+  end
+
+  def remove_protein
+    modify_nutrition_log(:protein_current, -5)
+  end
+
+  def add_sleep
+    modify_nutrition_log(:sleep_current, 1)
+  end
+
+  def remove_sleep
+    modify_nutrition_log(:sleep_current, -1)
+  end
+
+  def modify_nutrition_log(attribute, value)
+    @nutrition_log[attribute] += value
+    @nutrition_log.save
+    redirect_to @nutrition_log
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nutrition_log
