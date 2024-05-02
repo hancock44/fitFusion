@@ -58,27 +58,27 @@ class NutritionLogsController < ApplicationController
   end
 
   def add_calories
-    modify_nutrition_log(:calories_consumed, 100)
+    modify_nutrition_log(:calories_current, 100)
   end
 
   def remove_calories
-    modify_nutrition_log(:calories_consumed, -100)
+    modify_nutrition_log(:calories_current, -100)
   end
 
   def add_protein
-    modify_nutrition_log(:protein_intake, 5)
+    modify_nutrition_log(:protein_current, 5)
   end
 
   def remove_protein
-    modify_nutrition_log(:protein_intake, -5)
+    modify_nutrition_log(:protein_current, -5)
   end
 
   def add_sleep
-    modify_nutrition_log(:current_sleep_hours, 5)
+    modify_nutrition_log(:sleep_current, 5)
   end
 
   def remove_sleep
-    modify_nutrition_log(:current_sleep_hours, -5)
+    modify_nutrition_log(:sleep_current, -5)
   end
   
   private
