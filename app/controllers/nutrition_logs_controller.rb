@@ -1,5 +1,6 @@
 class NutritionLogsController < ApplicationController
   before_action :set_nutrition_log, only: %i[ show edit update destroy ]
+  before_validation :set_default_day, on: :create
 
   # GET /nutrition_logs or /nutrition_logs.json
   def index
@@ -80,7 +81,7 @@ class NutritionLogsController < ApplicationController
   def remove_sleep
     modify_nutrition_log(:sleep_current, -5)
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nutrition_log
@@ -93,8 +94,12 @@ class NutritionLogsController < ApplicationController
     end
 
     def modify_nutrition_log(attribute, value)
-    @nutrition_log[attribute] += value
-    @nutrition_log.save
-    redirect_to @nutrition_log
-  end
+      @nutrition_log[attribute] += value
+      @nutrition_log.save
+      redirect_to @nutrition_log
+    end
+
+    def set_default_day
+      self.day ||= Date.today
+    end
 end
