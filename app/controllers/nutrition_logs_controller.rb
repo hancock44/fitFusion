@@ -3,7 +3,7 @@ class NutritionLogsController < ApplicationController
 
   # GET /nutrition_logs or /nutrition_logs.json
   def index
-    @nutrition_logs = NutritionLog.all
+    @nutrition_logs = current_user.nutrition_logs
   end
 
   # GET /nutrition_logs/1 or /nutrition_logs/1.json
@@ -57,14 +57,44 @@ class NutritionLogsController < ApplicationController
     end
   end
 
+  def add_calories
+    modify_nutrition_log(:calories_consumed, 100)
+  end
+
+  def remove_calories
+    modify_nutrition_log(:calories_consumed, -100)
+  end
+
+  def add_protein
+    modify_nutrition_log(:protein_intake, 5)
+  end
+
+  def remove_protein
+    modify_nutrition_log(:protein_intake, -5)
+  end
+
+  def add_sleep
+    modify_nutrition_log(:current_sleep_hours, 5)
+  end
+
+  def remove_sleep
+    modify_nutrition_log(:current_sleep_hours, -5)
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nutrition_log
       @nutrition_log = NutritionLog.find(params[:id])
     end
-
+  
     # Only allow a list of trusted parameters through.
     def nutrition_log_params
       params.require(:nutrition_log).permit(:user_id, :calories_current, :sleep_current, :protein_current, :calories_max, :sleep_max, :protein_max)
     end
+
+    def modify_nutrition_log(attribute, value)
+    @nutrition_log[attribute] += value
+    @nutrition_log.save
+    redirect_to @nutrition_log
+  end
 end
