@@ -2,10 +2,10 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Social Feed</h1>
-<hr class="hr hr-blurry" />
 <div>
   <%= link_to "New post", new_post_path %>
 </div>
+<hr class="hr hr-blurry" />
 
 <div id="posts">
   <% @posts.each do |post| %>
