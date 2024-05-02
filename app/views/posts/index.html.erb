@@ -3,6 +3,10 @@
 
 <h1>Social Feed</h1>
 <hr class="hr hr-blurry" />
+<div>
+  <%= link_to "New post", new_post_path %>
+</div>
+
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
@@ -14,6 +18,3 @@
   <% end %>
 </div>
 
-<div>
-  <%= link_to "New post", new_post_path %>
-</div>
