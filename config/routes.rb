@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   root to: "medals#medals"
   
   #Nutrition Routes
-  get 'nutritionlogs/index'
+  get 'nutrition_logs/index'
   resources :nutrition_logs
   
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
