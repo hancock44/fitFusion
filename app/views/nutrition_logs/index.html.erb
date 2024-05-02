@@ -1,7 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Nutrition logs</h1>
-<%= link_to "New nutrition log", new_nutrition_log_path %>
+<div>
+  <%= link_to "New nutrition log", new_nutrition_log_path %>
+</div>
 <hr class="hr hr-blurry" />
 <div id="nutrition_logs">
   <% @nutrition_logs.each do |nutrition_log| %>
