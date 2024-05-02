@@ -1,4 +1,4 @@
-class NutritionlogsController < ApplicationController
+class NutritionLogsController < ApplicationController
   before_action :authenticate_user!
   
   def index
