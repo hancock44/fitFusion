@@ -3,7 +3,7 @@ class NutritionLogsController < ApplicationController
 
   # GET /nutrition_logs or /nutrition_logs.json
   def index
-    @nutrition_logs = @current_user.nutrition_logs.all
+    @nutrition_logs = @current_user.nutrition_logs.limit(7)
   end
 
   # GET /nutrition_logs/1 or /nutrition_logs/1.json
