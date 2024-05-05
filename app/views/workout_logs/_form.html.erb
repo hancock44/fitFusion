@@ -18,7 +18,17 @@
 
   <div>
     <%= form.label :regimen, style: "display: block" %>
-    <%= form.text_field :regimen %>
+     <p>
+    <strong>Regimen:</strong>
+    <select name="regimen">
+      <option value="Cardio">Cardio</option>
+      <option value="Upper">Upper</option>
+      <option value="Lower">Lower</option>
+      <option value="Full">Full</option>
+      <option value="Sport">Sport</option>
+      <option value="Recovery">Recovery</option>
+    </select>
+  </p>
   </div>
 
   <div>
