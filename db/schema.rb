@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_02_185708) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_05_232807) do
   create_table "likes", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_02_185708) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["user_id"], name: "index_workout_logs_on_user_id"
   end
 
