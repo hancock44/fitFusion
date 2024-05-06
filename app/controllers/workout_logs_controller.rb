@@ -4,7 +4,7 @@ class WorkoutLogsController < ApplicationController
 
   # GET /workout_logs or /workout_logs.json
   def index
-    @workout_logs = WorkoutLog.all
+    @workout_logs = current_user.workout_logs.where(user_id: current_user.id)
   end
 
   # GET /workout_logs/1 or /workout_logs/1.json
