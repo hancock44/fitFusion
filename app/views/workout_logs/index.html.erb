@@ -3,7 +3,7 @@
 <h1>Your Daily Workout Logs</h1>
 <% warriorlevel_message = WARRIORLEVEL_MESSAGES[current_user.warriorlevel] %>
 
-<if warriorlevel_message.present? %>
+<% if warriorlevel_message.present? %>
   <div class="alert alert-info">
     <%= warriorlevel_message %>
   </div>
