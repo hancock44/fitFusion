@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :user_email %>
-    <%= form.text_field :user_email, value: @workout_log.user_email, readonly: true %>
+    <%= form.text_field :user_email, value: current_user.email, readonly: true %>
   </div>
 
   <div>
