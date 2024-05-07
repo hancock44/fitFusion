@@ -16,6 +16,8 @@ class User < ApplicationRecord
       :silver
     elsif workout_logs_count >= 5
       :bronze
+    else
+      :none
     end
   end
 
