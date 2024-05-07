@@ -26,8 +26,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_232807) do
     t.float "sleep_current"
     t.integer "protein_current"
     t.integer "calories_max"
-    t.float "sleep_max"
-    t.integer "protein_max"
+    t.float "sleep_min"
+    t.integer "protein_min"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_nutrition_logs_on_user_id"
