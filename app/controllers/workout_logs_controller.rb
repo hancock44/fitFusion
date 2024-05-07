@@ -26,6 +26,7 @@ class WorkoutLogsController < ApplicationController
     @workout_log = WorkoutLog.new(workout_log_params)
     respond_to do |format|
       if @workout_log.save
+        current_user.increment!(:workout_logs_count)
         format.html { redirect_to workout_log_url(@workout_log), notice: "Workout log was successfully created." }
         format.json { render :show, status: :created, location: @workout_log }
       else
