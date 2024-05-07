@@ -15,6 +15,7 @@ class User < ApplicationRecord
       :silver
     elsif workout_logs_count >= 5
       :bronze
+    end
   end
 
   #def nerdlevel
