@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :nutrition_logs
   has_many :workout_logs
   has_many :posts
-  has_many :likes, dependent: :destroy
+  has_many :likes, dependent: :delete_all
 
   def warriorlevel
     if workout_logs_count.present?
