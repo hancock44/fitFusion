@@ -26,6 +26,7 @@ class WorkoutLogsController < ApplicationController
     @workout_log = WorkoutLog.new(workout_log_params)
     respond_to do |format|
       if @workout_log.save
+        current_user = User.find_by(id: user_id)
         current_user.add_workout_count(1)
         format.html { redirect_to workout_log_url(@workout_log), notice: "Workout log was successfully created." }
         format.json { render :show, status: :created, location: @workout_log }
@@ -63,7 +64,7 @@ class WorkoutLogsController < ApplicationController
     def add_workout_count(workout_log_count)
       previous_count = self.workout_log_count
       total_count = previous_count + workout_log_count
-      self.update_attribute(workout_log_count: total_count)
+      self.update_attribute(:workout_log_count, total_count)
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_workout_log
