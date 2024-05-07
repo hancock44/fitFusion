@@ -11,10 +11,13 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+
+
+   <div>
+    <%= form.label :user_email , style: "display: block" %>
+    <%= form.text_field :user_email, value: current_user.email, readonly: true %>
   </div>
+  <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div>
     <%= form.label :content, style: "display: block" %>
