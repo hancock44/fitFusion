@@ -23,18 +23,18 @@ class WorkoutLogsController < ApplicationController
 
   # POST /workout_logs or /workout_logs.json
   def create
-    @workout_log = WorkoutLog.new(workout_log_params)
+  @workout_log = current_user.workout_logs.build(workout_log_params)
 
-    respond_to do |format|
-      if @workout_log.save
-        format.html { redirect_to workout_log_url(@workout_log), notice: "Workout log was successfully created." }
-        format.json { render :show, status: :created, location: @workout_log }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @workout_log.errors, status: :unprocessable_entity }
-      end
+  respond_to do |format|
+    if @workout_log.save
+      format.html { redirect_to workout_log_url(@workout_log), notice: "Workout log was successfully created." }
+      format.json { render :show, status: :created, location: @workout_log }
+    else
+      format.html { render :new, status: :unprocessable_entity }
+      format.json { render json: @workout_log.errors, status: :unprocessable_entity }
     end
   end
+end
 
   # PATCH/PUT /workout_logs/1 or /workout_logs/1.json
   def update
