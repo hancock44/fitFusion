@@ -10,12 +10,14 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   def warriorlevel
-    if workout_logs_count >= 50
-      :gold
-    elsif workout_logs_count >= 10
-      :silver
-    elsif workout_logs_count >= 5
-      :bronze
+    if workout_logs_count.present?
+      if workout_logs_count >= 50
+        :gold
+      elsif workout_logs_count >= 10
+        :silver
+      elsif workout_logs_count >= 5
+        :bronze
+      end
     else
       :none
     end
