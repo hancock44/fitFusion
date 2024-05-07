@@ -8,6 +8,7 @@ class NutritionLogsController < ApplicationController
 
   # GET /nutrition_logs/1 or /nutrition_logs/1.json
   def show
+    @nutrition_log = NutritionLog.find(params[:id])
   end
 
   # GET /nutrition_logs/new
