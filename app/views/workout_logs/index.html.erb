@@ -1,6 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Your Daily Workout Logs</h1>
+<% warriorlevel_message = WARRIORLEVEL_MESSAGES[current_user.warriorlevel] %>
+
+<if warriorlevel_message.present? %>
+  <div class="alert alert-info">
+    <%= warriorlevel_message %>
+  </div>
+<% end %>
 <div>
   <%= link_to "New workout log", new_workout_log_path %>
 </div>
