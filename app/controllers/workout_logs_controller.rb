@@ -67,6 +67,6 @@ class WorkoutLogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def workout_log_params
-      params.require(:workout_log).permit(:user_id, :regimen, :description, :status)
+      params.require(:workout_log).permit(:user_id, :regimen, :description, :status, :workout_logs_count)
     end
 end
