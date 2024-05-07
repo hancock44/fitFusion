@@ -95,6 +95,6 @@ class NutritionLogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def nutrition_log_params
-      params.require(:nutrition_log).permit(:user_id, :calories_current, :sleep_current, :protein_current, :calories_max, :sleep_max, :protein_max)
+      params.require(:nutrition_log).permit(:user_id, :calories_current, :sleep_current, :protein_current, :calories_max, :sleep_min, :protein_min)
     end
 end
