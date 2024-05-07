@@ -13,7 +13,7 @@ class NutritionLogsController < ApplicationController
 
   # GET /nutrition_logs/new
   def new
-    @nutrition_log = NutritionLog.new
+  @nutrition_log = current_user.nutrition_logs.build
   end
 
   # GET /nutrition_logs/1/edit
