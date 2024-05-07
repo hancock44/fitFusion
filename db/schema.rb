@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_232807) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
+    t.string "status", default: "private"
     t.index ["user_id"], name: "index_workout_logs_on_user_id"
   end
 
