@@ -14,7 +14,7 @@
   <%= render "comments/form", comment: @comment%>
   <br>
   <%- @post.comments.each do |comment| %>
-    <%= comment.comment_text %>
+    <%= render comment %>
     <br>
   <% end %>
 
