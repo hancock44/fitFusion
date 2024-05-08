@@ -23,6 +23,7 @@
  <br>
  <%- @post.comments.each do |comment|%>
    <%= comment.text%>
+    <%= button_to "Destroy this comment", @comment, method: :delete %>
    <br>
  <% end %>
 
