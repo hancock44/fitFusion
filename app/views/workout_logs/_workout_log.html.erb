@@ -1,17 +1,9 @@
 <div id="<%= dom_id workout_log %>">
-  <p>
-    <strong>Created At:</strong>
-    <%= workout_log.created_at %>
-  </p>
-
-  <p>
-    <strong>Regimen:</strong>
-    <%= workout_log.regimen %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= workout_log.description %>
-  </p>
-
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Created At:</strong><%= workout_log.created_at %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><strong>Regimen:</strong><%= workout_log.regimen %></h6>
+      <p class="card-text"><strong>Description:</strong><%= workout_log.description %></p>
+    </div>
+  </div>
 </div>
