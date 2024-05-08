@@ -49,7 +49,6 @@ gem "bootstrap"
 gem "sassc-rails"
 
 #charts
-gem 'chartkick'
 gem 'highcharts-rails'
 
 group :development, :test do
