@@ -15,7 +15,7 @@
   <b>Comments</b>
   <%= link_to "New comment", new_comment_path %>
   <div id="comments">
-    <% @comments.each do |comment| %>
+    <% @post.comments.each do |comment| %>
       <%= render comment %>
       <p>
         <%= link_to "Show this comment", comment %>
