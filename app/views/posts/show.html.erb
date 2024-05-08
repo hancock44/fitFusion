@@ -13,8 +13,8 @@
   <b>Comments</b>
   <%= render "comments/form", comment: @comment%>
   <br>
-  <%- @post.comments.each do |comment|%>
-    <%= comment.comment_text%>
+  <%- @post.comments.each do |comment| %>
+    <%= comment.comment_text %>
     <br>
   <% end %>
 
