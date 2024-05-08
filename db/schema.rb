@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_004615) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "workout_logs_count"
+    t.integer "workout_logs_count", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -64,9 +64,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_004615) do
     t.index ["user_id"], name: "index_workout_logs_on_user_id"
   end
 
-  add_foreign_key "likes", "posts"
-  add_foreign_key "likes", "users"
-  add_foreign_key "nutrition_logs", "users"
-  add_foreign_key "posts", "users"
   add_foreign_key "workout_logs", "users"
 end
