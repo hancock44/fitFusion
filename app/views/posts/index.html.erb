@@ -15,13 +15,11 @@
 <!-- Container for displaying posts -->
 <div id="posts">
   <% @posts.each do |post| %>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <p class="card-text"><%= render post %></p>
-        <%= link_to "Show this post", post %>
-        <a href="#" class="card-link"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></a>
-      </div>
-    </div>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post %>
+      <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+    </p>
     <hr class="hr hr-blurry" />
   <% end %>
 </div>
