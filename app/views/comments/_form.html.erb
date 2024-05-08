@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+  <%= form.hidden_field :user_id %>
+  <%= form.hidden_field :post_id %>
   <div>
     <%= form.label :comment_text, style: "display: block" %>
     <%= form.text_area :comment_text %>
