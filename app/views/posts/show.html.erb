@@ -21,11 +21,12 @@
 <div>
   <b>Comments</b>
  <br>
+<%= render "comments/form", comment: @comment%>
  <%- @post.comments.each do |comment|%>
    <%= comment.text%>
    <br>
  <% end %>
 
- <%= render "comments/form", comment: @comment%>
+ 
 </div>
 
