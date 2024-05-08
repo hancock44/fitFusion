@@ -24,7 +24,7 @@ class User < ApplicationRecord
   end
 
   def add_workout_count(workout_log_count)
-    previous_count = self.workout_logs_count
+    previous_count = self.workout_logs_count || 0
     total_count = previous_count + workout_log_count
     self.update_attribute(:workout_logs_count, total_count)
   end
