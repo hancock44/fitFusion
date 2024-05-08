@@ -18,12 +18,10 @@
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
 
-<div>
-  <b>Comments</b>
- <br>
 <div class="row d-flex justify-content-left">
   <div class="col-md-8 col-lg-6">
     <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+      <b>Comments</b>
       <div class="card-body p-4">
         <div data-mdb-input-init class="form-outline mb-4">
           <%= render "comments/form", comment: @comment%>
@@ -35,9 +33,9 @@
           </div>
         </div>
         <% end %>
-        </div>
       </div>
     </div>
   </div>
 </div>
+
 
