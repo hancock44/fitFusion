@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :workout_logs
   has_many :posts
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def warriorlevel
     if workout_logs_count.present?
