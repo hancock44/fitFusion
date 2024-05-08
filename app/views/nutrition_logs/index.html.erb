@@ -4,7 +4,7 @@
 <div>
   <%= link_to "New nutrition log", new_nutrition_log_path %>
 </div>
-<%= line_chart NutritionLog.group_by_day(:created_at).current_user.sleep_current %>
+<%= line_chart current_user.nutrition_logs.group_by_day(:created_at).sleep_current %>
 <hr class="hr hr-blurry" />
 <div id="nutrition_logs">
   <% @nutrition_logs.each do |nutrition_log| %>
