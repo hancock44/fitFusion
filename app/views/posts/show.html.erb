@@ -2,6 +2,12 @@
 
 <%= render @post %>
 
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><%= render @post %></p>
+  </div>
+</div>
+
 <div>
   <%= button_to 'Like', post_likes_path(@post), method: :post %>
   <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
