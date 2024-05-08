@@ -11,3 +11,14 @@
   <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 </div>
 
+<div>
+  <b>Comments</b>
+ <br>
+ <%- @post.comments.each do |comment|%>
+   <%= comment.text%>
+   <br>
+ <% end %>
+
+ <%= render "comments/form", comment: @comment%>
+</div>
+
