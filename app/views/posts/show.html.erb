@@ -23,6 +23,9 @@
  <br>
  <%- @post.comments.each do |comment|%>
    <%= comment.text%>
+    <p>
+      <%= link_to "Show this comment", comment %>
+    </p>
    <br>
  <% end %>
 
