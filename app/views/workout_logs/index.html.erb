@@ -11,7 +11,10 @@
 <div>
   <%= link_to "New workout log", new_workout_log_path %>
 </div>
-<%= pie_chart current_user.workout_logs.group(:regimen).count %>
+<div>
+  <h3>Regimen History</h3>
+  <%= pie_chart current_user.workout_logs.group(:regimen).count %>
+</div>
 <hr class="hr hr-blurry" />
 <div id="workout_logs">
   <% @workout_logs.each do |workout_log| %>
