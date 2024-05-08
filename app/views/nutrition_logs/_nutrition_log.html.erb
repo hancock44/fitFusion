@@ -1,37 +1,14 @@
 <div id="<%= dom_id nutrition_log %>">
-  <p>
-    <strong>Created At:</strong>
-    <%= nutrition_log.created_at %>
-  </p>
-
-  <p>
-    <strong>Calories current:</strong>
-    <%= nutrition_log.calories_current %>
-  </p>
-
-  <p>
-    <strong>Sleep Current:</strong>
-    <%= nutrition_log.sleep_current %>
-  </p>
-
-  <p>
-    <strong>Protein Current:</strong>
-    <%= nutrition_log.protein_current %>
-  </p>
-
-  <p>
-    <strong>Calories Max:</strong>
-    <%= nutrition_log.calories_max %>
-  </p>
-
-  <p>
-    <strong>Sleep Min:</strong>
-    <%= nutrition_log.sleep_min %>
-  </p>
-
-  <p>
-    <strong>Protein Min:</strong>
-    <%= nutrition_log.protein_min %>
-  </p>
-
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Created At:</strong><%= nutrition_log.created_at %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text"><strong>Calories current:</strong><%= nutrition_log.calories_current %></p>
+      <p class="card-text"><strong>Sleep Current:</strong><%= nutrition_log.sleep_current %></p>
+      <p class="card-text"><strong>Protein Current:</strong><%= nutrition_log.protein_current %></p>
+      <p class="card-text"><strong>Calories Max:</strong><%= nutrition_log.calories_max %></p>
+      <p class="card-text"><strong>Sleep Min:</strong><%= nutrition_log.sleep_min %></p>
+      <p class="card-text"><strong>Protein Min:</strong><%= nutrition_log.protein_min %></p>
+    </div>
+  </div>
 </div>
