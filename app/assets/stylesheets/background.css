@@ -7,5 +7,8 @@
   /* Ensure the container fills the viewport */
   width: 100vw;
   height: 100vh;
-  /* Add other styles as needed */
+  /* Set background properties */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image from repeating */
 }
