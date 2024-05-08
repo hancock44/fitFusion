@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @post.comments.create(user_id: current_user.id)
 
     respond_to do |format|
       if @comment.save
