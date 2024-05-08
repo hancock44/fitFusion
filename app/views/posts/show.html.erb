@@ -15,6 +15,7 @@
   <br>
   <%- @post.comments.each do |comment| %>
     <%= render comment %>
+    <%= link_to "Show this comment", comment %>
     <br>
   <% end %>
 
