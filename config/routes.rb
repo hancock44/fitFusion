@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
   #Devise
   root to: "articles#home"
   devise_for :users
