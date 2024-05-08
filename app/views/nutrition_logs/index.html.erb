@@ -5,11 +5,11 @@
   <%= link_to "New nutrition log", new_nutrition_log_path %>
 </div>
 <div>
-  <p class="font-weight-bold">Calories by Log</p>
+  <p><strong>Calories by Log</strong></p>
   <%= line_chart current_user.nutrition_logs.group(:created_at).average(:calories_current) %>
-  <p class="font-weight-bold">Sleep by Log</p>
+  <p><strong>Sleep by Log</strong></p>
   <%= line_chart current_user.nutrition_logs.group(:created_at).average(:sleep_current) %>
-  <p class="font-weight-bold">Protein by Log</p>
+  <p><strong>Protein by Log</strong></p>
   <%= line_chart current_user.nutrition_logs.group(:created_at).average(:protein_current) %>
 </div>
 <hr class="hr hr-blurry" />
