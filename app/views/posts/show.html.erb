@@ -11,15 +11,3 @@
   <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 </div>
 
-<div>
-  <b>Comments</b>
-  <%= link_to "New comment", new_comment_path %>
-  <div id="comments">
-    <% @post.comments.each do |comment| %>
-      <%= render comment %>
-      <p>
-        <%= link_to "Show this comment", comment %>
-      </p>
-    <% end %>
-  </div>
-</div>
