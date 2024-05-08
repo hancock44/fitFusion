@@ -9,18 +9,17 @@
     <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
   <% end %>
   <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-  
+</div>
+
+<div>
   <b>Comments</b>
-  <%= render "comments/form", comment: @comment%>
-  <br>
-  <%- @post.comments.each do |comment| %>
-    <%= render comment %>
-    <%= link_to "Show this comment", comment %>
-    <br>
-  <% end %>
-
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
+  <%= link_to "New comment", new_comment_path %>
+  <div id="comments">
+    <% @comments.each do |comment| %>
+      <%= render comment %>
+      <p>
+        <%= link_to "Show this comment", comment %>
+      </p>
+    <% end %>
+  </div>
 </div>
