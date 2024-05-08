@@ -23,6 +23,11 @@ class User < ApplicationRecord
     end
   end
 
+  def add_workout_count(workout_log_count)
+    previous_count = self.workout_log_count || 0
+    total_count = previous_count + workout_log_count
+    self.update_attribute(:workout_log_count, total_count)
+  end
   #def nerdlevel
     #if nutrition_logs_count >= 50
      # :gold
