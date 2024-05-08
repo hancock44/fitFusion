@@ -1,6 +1,6 @@
 .background-container {
   /* Set the background image */
-  background-image: url('<%= asset_path('logo.jpg') %>');
+  background-image: image-url('logo.jpg');
   /* Adjust background image properties */
   background-size: cover;
   background-position: center;
