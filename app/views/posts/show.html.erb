@@ -21,11 +21,20 @@
 <div>
   <b>Comments</b>
  <br>
- <%- @post.comments.each do |comment|%>
-   <%= comment.text%>
-   <br>
- <% end %>
-
- <%= render "comments/form", comment: @comment%>
+<div class="row d-flex justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+      <div class="card-body p-4">
+        <%= render "comments/form", comment: @comment%>
+        <div data-mdb-input-init class="form-outline mb-4">
+        </div>
+        <%- @post.comments.each do |comment|%>
+        <div class="card mb-4">
+          <div class="card-body">
+            <p> <%= comment.text%> </p>
+          </div>
+        </div>
+      </div>
+      <% end %>
 </div>
 
