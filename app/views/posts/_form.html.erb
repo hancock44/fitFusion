@@ -24,6 +24,8 @@
     <%= form.text_area :content %>
   </div>
 
+  <%= render "comments/form", comment: @comment%>
+
   <div>
     <%= form.submit %>
   </div>
