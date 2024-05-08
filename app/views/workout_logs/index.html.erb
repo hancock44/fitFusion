@@ -1,13 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Your Daily Workout Logs</h1>
-<% warriorlevel_message = WARRIORLEVEL_MESSAGES[current_user.warriorlevel] %>
 
-<% if warriorlevel_message.present? %>
-  <div class="alert alert-info">
-    <%= warriorlevel_message %>
-  </div>
-<% end %>
 <div>
   <%= link_to "New workout log", new_workout_log_path %>
 </div>
@@ -18,10 +12,15 @@
 <hr class="hr hr-blurry" />
 <div id="workout_logs">
   <% @workout_logs.each do |workout_log| %>
-    <%= render workout_log %>
-    <p>
-      <%= link_to "Show this workout log", workout_log %>
-    </p>
-    <hr class="hr hr-blurry" />
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text"><%= render workout_log %></p>
+      <a href="#" class="card-link"><%= link_to "Show this workout log", workout_log %></a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+  <hr class="hr hr-blurry" />
   <% end %>
 </div>
