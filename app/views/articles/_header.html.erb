@@ -1,31 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <li class="nav-item nav-link" href="#">
-        <%= link_to "FitFusion", root_path, class:"nav-link active" %>
-      </li>
-      <li class="nav-item nav-link" href="#">
-        <%= link_to "Workouts", workout_logs_index_path, class:"nav-link" %>
-      </li>
-      <li class="nav-item nav-link" href="#">
-        <%= link_to "Nutrition", nutrition_logs_index_path, class:"nav-link" %>
-      </li>
-      <li class="nav-item nav-link" href="#">
-        <%= link_to "Social", posts_index_path, class:"nav-link" %>
-      </li>
+<div class="background-container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <li class="nav-item nav-link" href="#">
+          <%= link_to "FitFusion", root_path, class:"nav-link active" %>
+        </li>
+        <li class="nav-item nav-link" href="#">
+          <%= link_to "Workouts", workout_logs_index_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item nav-link" href="#">
+          <%= link_to "Nutrition", nutrition_logs_index_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item nav-link" href="#">
+          <%= link_to "Social", posts_index_path, class:"nav-link" %>
+        </li>
+      </div>
+      <form class="">
+          <% if !user_signed_in? %>
+            <%= link_to 'Log In', new_user_session_path, class:"btn btn-outline-success"%>
+            <%= link_to 'Become member', new_user_registration_path, class:"btn btn-outline-success"%>
+          <% else %>
+            <%= current_user.email %>
+            <%= link_to 'Sign out', destroy_user_session_path, class:"btn btn-outline-success"%>
+          <% end %>
+        </form>
     </div>
-    <form class="">
-        <% if !user_signed_in? %>
-          <%= link_to 'Log In', new_user_session_path, class:"btn btn-outline-success"%>
-          <%= link_to 'Become member', new_user_registration_path, class:"btn btn-outline-success"%>
-        <% else %>
-          <%= current_user.email %>
-          <%= link_to 'Sign out', destroy_user_session_path, class:"btn btn-outline-success"%>
-        <% end %>
-      </form>
-  </div>
-</nav>
+  </nav>
+</div> <!-- End of background-container -->
