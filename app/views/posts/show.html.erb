@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
-
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <p class="card-text"><%= render @post %></p>
+    <div>
+      <%= button_to 'Like', post_likes_path(@post), method: :post %>
+      <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+      <% if pre_like %>
+        <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+      <% end %>
+      <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+    </div>
   </div>
 </div>
 
