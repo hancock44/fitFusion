@@ -18,6 +18,8 @@ Run --> bin/rails db:migrate
 *Using the Application
 Run a nohup command to run indefinitely
 When using the app, everyone has their personal WorkoutLog and NutritionLog with an anonyoumous Social posting system
-  Current State: Needs an achievement system that works --> adding more migrations will be needed. Rough draft of actual application. May need to be edited in format to look nicer and cleaning up the excess code from failed attempts at other features.
-  Issues: No way to delete social posts but they can be edited. Tried to fix this but nothing seemed to work. Comments also are undeletable along with being uneditable and unshowable which is an underlying issue with the way it was created
+
+Current State: Needs an achievement system that works --> adding more migrations will be needed. Rough draft of actual application. May need to be edited in format to look nicer and cleaning up the excess code from failed attempts at other features.
+
+Issues: No way to delete social posts but they can be edited. Tried to fix this but nothing seemed to work. Comments also are undeletable along with being uneditable and unshowable which is an underlying issue with the way it was created
   
