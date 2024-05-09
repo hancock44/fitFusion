@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  #Pictures
+  get '/:logo.:jpg' => 'assets#images'
+  
+  #Comments
   resources :comments
+  
   #Devise
   root to: "articles#home"
   devise_for :users
