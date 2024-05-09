@@ -16,7 +16,9 @@ Copy and clone from Github
 Run --> bin/rails db:migrate
 
 *Using the Application
+
 Run a nohup command to run indefinitely
+
 When using the app, everyone has their personal WorkoutLog and NutritionLog with an anonyoumous Social posting system
 
 Current State: Needs an achievement system that works --> adding more migrations will be needed. Rough draft of actual application. May need to be edited in format to look nicer and cleaning up the excess code from failed attempts at other features.
